@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Simulatort</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <audio src="jump-15984.mp3"></audio>
+    <section class="home">
+        <div class="nabvar">
+            <nav class="navbuttons">
+                <ul>
+                    <li id="pink"><a href="#">Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a href="#motion">Simulator</a></li>
+                    <li><a href="#sec2">Graph</a></li>
+                    <li><a>Tutorial</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="title-container">
+            <div id="title">
+                <h1>
+                    Projectile<br>Motion<br>Simulator<br>
+                    <h3>(2D)</h3>
+                </h1>
+            </div>
+            <div id="button">
+                <form action="">
+                    <a href="#motion"><button>LET'S START</button></a>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="motion">
+        <div id="graph-img">
+            <img
+                src="/images/pngtree-white-graph-with-xy-linesrulers-isolated-vector-sketch-scale-mathematical-vector-png-image_40399626-removebg-preview.png">
+        </div>
+        <div id="container">
+            <div id="inputs">
+                <p>Angle (degrees): <input type="number" id="angle" value="45"></p>
+                <p>Initial velocity (m/s): <input type="number" id="velocity" value="50"></p>
+                <button onclick="startAnimation()" id="startBtn">Start</button>
+                <p>Maximum height:<span id="maxHeight"></span>m</p>
+                <p id="output"></p>
+            </div>
+
+            <div>
+                <canvas id="canvas" width="800" height="400"></canvas>
+            </div>
+        </div>
+    </section>
+    <section id="sec2">
+        <div id="inputArea">
+            <input type="number" id="velocity1" placeholder="Enter initial velocity (m/s)">
+            <input type="number" id="angle1" placeholder="Enter angle of projection (degrees)">
+            <button onclick="plotGraph()" id="startBtn">Plot Graph</button>
+        </div>
+        <div id="area">
+            <canvas id="myChart"></canvas>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
