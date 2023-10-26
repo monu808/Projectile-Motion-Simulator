@@ -14,10 +14,10 @@
             <nav class="navbuttons">
                 <ul>
                     <li id="pink"><a href="#">Home</a></li>
-                    <li><a>About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#motion">Simulator</a></li>
                     <li><a href="#sec2">Graph</a></li>
-                    <li><a>Tutorial</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
                 </ul>
             </nav>
         </div>
@@ -38,7 +38,7 @@
     <section id="motion">
         <div id="graph-img">
             <img
-                src="pngtree-white-graph-with-xy-linesrulers-isolated-vector-sketch-scale-mathematical-vector-png-image_40399626-removebg-preview.png">
+                src="/images/pngtree-white-graph-with-xy-linesrulers-isolated-vector-sketch-scale-mathematical-vector-png-image_40399626-removebg-preview.png">
         </div>
         <div id="container">
             <div id="inputs">
@@ -64,8 +64,92 @@
             <canvas id="myChart"></canvas>
         </div>
     </section>
+
+    <section id="pmcal">
+        <!-- <div id="padding12">
+            <h1>Projectile Motion Calculator</h1>
+        </div> -->
+        <div id="fix">
+            <form id="projectile-form">
+                <label for="velocity">Initial Velocity (m/s):</label><br>
+                <input type="number" id="velocity5" name="velocity"><br>
+                <label for="angle">Launch Angle (degrees):</label><br>
+                <input type="number" id="angle5" name="angle"><br>
+                <label for="gravity">Gravity (m/s^2):</label><br>
+                <input type="number" id="gravity5" name="gravity" value="9.8"><br>
+                <label for="cohesivity">Cohesivity:</label><br>
+                <input type="number" id="cohesivity5" name="cohesivity"><br>
+                <input type="submit" id="startBtn" value="Calculate">
+            </form>
+        </div>
+        <div id="output5"></div>
+    </section>
+
+    <section id="tutorial">
+        <div id="padding1">
+            <h2>Tutorial</h2>
+        </div>
+        <div id="fit">
+            <video src="/images/Projectile Motion Simulatort - Google Chrome 2023-10-25 23-45-55.mp4" height="540px"
+                width="960px" controls></video>
+        </div>
+    </section>
+    <section id="about">
+        <div id="padding">
+            <h2>About Our Project</h2>
+            <p>
+                Welcome to the "Projectile Motion Simulator" project! This web-based application is a practical
+                demonstration of HTML, CSS, and JavaScript in action, enhanced by the integration of the Chart.js
+                library.
+                Designed to illustrate the fundamental principles of projectile motion, this simulator allows users to
+                interactively explore and visualize the motion of launched objects. With just a few inputs, you can
+                simulate
+                and observe the trajectory, height, range, and time of flight of a projectile, making the concept of
+                projectile motion more accessible and engaging. Dive in and experience the world of physics through this
+                dynamic and user-friendly tool!
+            </p>
+
+            <h2>Team Members</h2>
+            <p>
+                NARENDRA SINGH CHOUHAN(22BCE11678)<br>
+                NAMAN CHOURASIA (22BCE10432)<br>
+                PRANAV PRADEEP SABNE (22BCE10496)<br>
+                SUBHAJIT CHAKRABORTY (22BCE10501)<br>
+                SOMSUBHRO CHAKRABARTI (22BCE10938)<br>
+            </p>
+
+            <h2>Project Supervisor</h2>
+            <p>Our project is supervised by Ms. MANORAMA CHOUHAN, who has been instrumental in guiding us through the
+                process
+                and providing valuable insights and feedback.</p>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('projectile-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const velocity = document.getElementById('velocity5').value;
+            const angle = document.getElementById('angle5').value * Math.PI / 180;  // convert angle to radians
+            const g = document.getElementById('gravity5').value;  // acceleration due to gravity (m/s^2)
+            const cohesivity = document.getElementById('cohesivity5').value;
+
+            const time = 2 * velocity * Math.sin(angle) / g;
+            const distance = velocity * Math.cos(angle) * time;
+            const height = Math.pow(velocity * Math.sin(angle), 2) / (2 * g);
+
+            const horizontalVelocity = velocity * Math.cos(angle);
+            const verticalVelocity = velocity * Math.sin(angle);
+
+            document.getElementById('output5').innerHTML =
+                'Time of flight: ' + time.toFixed(2) + ' s<br>' +
+                'Horizontal distance: ' + distance.toFixed(2) + ' m<br>' +
+                'Maximum height: ' + height.toFixed(2) + ' m<br>' +
+                'Horizontal velocity: ' + horizontalVelocity.toFixed(2) + ' m/s<br>' +
+                'Vertical velocity: ' + verticalVelocity.toFixed(2) + ' m/s';
+        });
+    </script>
 </body>
 
 </html>
