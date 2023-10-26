@@ -7,7 +7,7 @@ body{
     height: 100vh;
     width: auto;
     /* background-image: linear-gradient(-50deg, #8744c2 0%, #e2e0e9 74%); */
-    background-image: url(bggr.jpg);
+    background-image: url(images/bggr.jpg);
     /* background-attachment: scroll; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -162,6 +162,56 @@ input{
     /*padding-bottom: 40px;*/
     height: 700px;
 }
+#about{
+    background-image: linear-gradient(-180deg, #7c4fec 0%, #e2e0e9 74%);
+    
+}
+#tutorial{
+    background-image: linear-gradient(-180deg, #7c4fec 0%, #e2e0e9 74%);
+    height: 100vh;
+}
+#pmcal{
+    background-image: linear-gradient(-180deg, #7c4fec 0%, #e2e0e9 74%);
+    height: 90vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+#pmcal div{
+    display: inline-block;
+    
+}
+#fix{
+    height: 300px;
+    width: 500px;
+}
+#output5{
+    height: 300px;
+    width: 500px;
+    font-size: 2rem;
+}
+#fit{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+#padding{
+    padding: 10px;
+}
+#padding1{
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+#padding12{
+    padding: 10px;
+    text-align: center;
+    width: 100vw;
+    font-size: 1rem;
+    
+}
 p{
     /* margin-left: 100px; */
     font-weight: bolder;
@@ -205,7 +255,7 @@ p{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(bggr.jpg);
+    background-image: url(images/bggr.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
